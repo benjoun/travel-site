@@ -1,0 +1,19 @@
+.generic-content-container {
+
+  p {
+    line-height: 1.65;
+    margin: 1.8rem 0;
+
+    @mixin atSmall {
+      font-size: 1.125rem;
+    }
+  }
+
+  /* we could nest but less readable/maintenable */
+  p a {
+    /* 400 is considered as standard font-weight ... so for bold 700 is fine */
+    font-weight: 700;
+
+    /* for the orange color probably better to define it globally for all links */
+  }
+}

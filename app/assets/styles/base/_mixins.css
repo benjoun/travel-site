@@ -1,0 +1,30 @@
+@define-mixin atSmall {
+  @media (min-width: 530px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin atMedium {
+  @media (min-width: 800px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin atLarge {
+  @media (min-width: 800px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin clearfix {
+  /* For Clearfix
+    We create a pseudo or fake content with css */
+    /* It is like create a content right after the current div 
+    but this is not ideal to do it in the index.html as it is for style purpose*/
+    &::after {
+      content: "";
+      clear: both;
+      display: table; /* for a bit of extra browser support */
+    }
+}
+  

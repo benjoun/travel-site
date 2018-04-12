@@ -1,0 +1,44 @@
+.row {
+
+  @mixin clearfix;
+
+  /* We make the entire row an extra gutter bigger & do an overflow hidden on the parent (wrapper). So it is like the last child gutter doesn't exist/show */
+  &--gutters {
+    margin-right: -65px;
+  }
+  /* >: to select the childs, because this is not to style the parent*/
+  &--gutters > div{
+    padding-right: 65px;
+  }
+
+  
+  &__b-margin-until-medium {
+    margin-bottom: 1rem;
+  }
+
+  @mixin atMedium {
+    &__b-margin-until-medium {
+      margin-bottom: 0;
+    }
+  
+    &__medium-4 {
+      float: left;
+
+      /* each column: 100% divided by 12, so take 8.33 % ... so for a 4column: 4*8.33 = 33.33 */
+      width: 33.33%;
+
+      &--larger {
+        width: 37%;
+      }
+    }
+
+    &__medium-8 {
+      float: left;
+      width: 66.66%;
+
+      &--smaller {
+        width: 63%;
+      }   
+    }
+  }
+}

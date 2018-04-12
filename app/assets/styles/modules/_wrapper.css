@@ -1,0 +1,31 @@
+.wrapper {
+  overflow: hidden;
+  padding-left: 18px;
+  padding-right: 18px;
+
+  /* So that the text lines are not too long too read on a large screen */
+  /* We added 36px because with the bor-sizing= border-box to all elements 
+  we lost 36px with the padding left & right (18+18) */
+  max-width: 1236px;
+  
+  margin-left: auto;
+  margin-right: auto;
+
+  &--medium {
+    max-width: 976px;    
+  }
+
+  &--b-margin {
+    margin-bottom: 1rem;
+
+    @mixin atSmall {
+      margin-bottom: 3.875rem;
+    }
+  }
+
+  /* So that a wrapper inside a wrapper don't add padding */
+  .wrapper { 
+    padding-left: 0;
+    padding-right: 0;      
+  }
+}
