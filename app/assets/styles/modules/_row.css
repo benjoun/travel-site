@@ -6,11 +6,19 @@
   &--gutters {
     margin-right: -65px;
   }
+  
+  &--gutters-large {
+    margin-right: -100px;      
+  }
+
   /* >: to select the childs, because this is not to style the parent*/
   &--gutters > div{
     padding-right: 65px;
   }
 
+  &--gutters-large > div{
+    padding-right: 100px;
+  }
   
   &__b-margin-until-medium {
     margin-bottom: 1rem;
@@ -30,6 +38,13 @@
       &--larger {
         width: 37%;
       }
+    }
+
+    &__medium-6 {
+      float: left;
+
+      /* each column: 100% divided by 12, so take 8.33 % ... so for a 4column: 4*8.33 = 33.33 */
+      width: 50%;
     }
 
     &__medium-8 {
