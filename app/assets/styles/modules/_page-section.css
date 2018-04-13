@@ -8,8 +8,38 @@ So it is a design pattern ... that we will integrate in this class */
     padding: 4.5rem 0;
   }
 
+  &--no-b-padding-until-medium {
+    padding-bottom:0;
+
+    @mixin atMedium {
+      /* setting back to its original value */
+      @padding-bottom: 4.5rem;
+    }      
+  }
+
+  &--no-b-padding-until-large {
+    padding-bottom:0;
+
+    @mixin atMedium {
+      /* setting back to its original value */
+      @padding-bottom: 4.5rem;
+    }      
+  }
+
   &--blue {
     background-color: $mainBlue;
     color: #FFF;
+  }
+
+  &--testimonials {
+
+    /* For small screen the background image is not much relevent and seen
+    it give mores data to load also for no significance. */
+    background-color: #e0e6ef;
+
+    @mixin atLarge {
+      background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+      background-size: cover;  
+    }
   }
 }

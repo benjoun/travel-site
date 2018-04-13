@@ -725,9 +725,48 @@ So it is a design pattern ... that we will integrate in this class */
 }
   }
 
+.page-section--no-b-padding-until-medium {
+    padding-bottom:0;      
+  }
+
+@media (min-width: 800px) {
+
+.page-section--no-b-padding-until-medium {
+      /* setting back to its original value */      
+  }
+      @padding-bottom: 4.5rem;
+  }
+
+.page-section--no-b-padding-until-large {
+    padding-bottom:0;      
+  }
+
+@media (min-width: 800px) {
+
+.page-section--no-b-padding-until-large {
+      /* setting back to its original value */      
+  }
+      @padding-bottom: 4.5rem;
+  }
+
 .page-section--blue {
     background-color: #2f5572;
     color: #FFF;
+  }
+
+.page-section--testimonials {
+
+    /* For small screen the background image is not much relevent and seen
+    it give mores data to load also for no significance. */
+    background-color: #e0e6ef;
+  }
+
+@media (min-width: 1010px) {
+
+.page-section--testimonials {
+      background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+      background-size: cover
+  }
   }
 
 /* It is like create a content right after the current div 
@@ -739,17 +778,25 @@ So it is a design pattern ... that we will integrate in this class */
       display: table; /* for a bit of extra browser support */
     }
 
+/* For Clearfix
+    We create a pseudo or fake content with css */
+
+.row--t-padding {
+    padding-top: 80px;
+  }
+
 /* We make the entire row an extra gutter bigger & do an overflow hidden on the parent (wrapper). So it is like the last child gutter doesn't exist/show */
 
 .row--gutters {
     margin-right: -65px;
   }
 
-/* For Clearfix
-    We create a pseudo or fake content with css */
-
 .row--gutters-large {
     margin-right: -100px;      
+  }
+
+.row--gutters-small {
+    margin-right: -45px;
   }
 
 /* >: to select the childs, because this is not to style the parent*/
@@ -760,6 +807,10 @@ So it is a design pattern ... that we will integrate in this class */
 
 .row--gutters-large > div{
     padding-right: 100px;
+  }
+
+.row--gutters-small > div{
+    padding-right: 45px;
   }
 
 .row__b-margin-until-medium {
@@ -799,6 +850,77 @@ So it is a design pattern ... that we will integrate in this class */
       }
   }
 
+@media (min-width: 1010px) {
+    .row__b-margin-until-large {
+      margin-bottom: 0;
+    }
+  
+    .row__large-4 {
+      float: left;
+
+      /* each column: 100% divided by 12, so take 8.33 % ... so for a 4column: 4*8.33 = 33.33 */
+      width: 33.33%;
+    }
+
+      .row__large-4--larger {
+        width: 37%;
+      }
+
+    .row__large-6 {
+      float: left;
+
+      /* each column: 100% divided by 12, so take 8.33 % ... so for a 4column: 4*8.33 = 33.33 */
+      width: 50%;
+    }
+
+    .row__large-8 {
+      float: left;
+      width: 66.66%;   
+    }
+
+      .row__large-8--smaller {
+        width: 63%;
+      }
+  }
+
+/* Begin Equal Height Rules */
+
+@media (min-width: 800px) {
+
+.row--equal-height-at-medium {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex
+  }
+  }
+
+/* In order for the flex to work, we have to specify flex to the column child element */
+
+.row--equal-height-at-medium > div {
+      float: none;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+@media (min-width: 1010px) {
+
+.row--equal-height-at-large {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex
+  }
+  }
+
+/* In order for the flex to work, we have to specify flex to the column child element */
+
+.row--equal-height-at-large > div {
+      float: none;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+
 .section-title {
   font-size: 2.55rem;
   font-weight: 300;
@@ -816,6 +938,10 @@ So it is a design pattern ... that we will integrate in this class */
     font-weight: 500;
   }
 
+.section-title--blue {
+    color: #2f5572;
+  }
+
 .section-title__icon {
     /* To draw the text after it on mobile & centered*/
     display: block;
@@ -827,6 +953,11 @@ So it is a design pattern ... that we will integrate in this class */
 @media (min-width: 530px) {
 
 .section-title__icon {
+
+      /* to put the icon a bit lower */
+      position: relative;
+      top: 8px;
+      
       margin-right: .5rem;
       margin-left: 0;
       margin-bottom: 0;
@@ -836,10 +967,66 @@ So it is a design pattern ... that we will integrate in this class */
   }
   }
 
+.testimonial {
+  background-color: rgba(255, 255, 255, .8);
+
+  /* to prevent the images to overlap vertically on mobile divecs */
+  margin-bottom: 98px;
+  
+  /* we give one pixel of bottom padding: it will give more because 
+   it will give the bottom margin of the child p element something 
+   to push against instead of leaking outside*/
+   padding: 0 18px 1px 18px;
+
+}
+
+@media (min-width: 1010px) {
+
+.testimonial {
+    margin-bottom: 0;
+    padding: 0 1.8125rem 1px 1.8125rem
+
+}
+  }
+
+.testimonial--last {
+    margin-bottom: 0;
+  }
+
+.testimonial__photo {
+    border-radius: 100%;
+    overflow: hidden;
+    width: 160px;
+    height: 160px;
+
+    /* We give that bottom margin so that the text doesn't stay low 
+    once we use the position relative to put the image higher  */
+    margin: 0 auto -80px auto;
+
+    position:relative;
+    top: -80px;
+
+    border: 6px solid rgba(255, 255, 255, .8);
+  }
+
+.testimonial__title {
+    color: #2f5572;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+.testimonial__subtitle {
+    color: #d59541;
+    text-align: center;
+    font-size: .9375rem;
+    font-weight: 400;
+    margin: .25rem 0 1rem 0;
+  }
+
 .wrapper {
   overflow: hidden;
-  padding-left: 18px;
-  padding-right: 18px;
 
   /* So that the text lines are not too long too read on a large screen */
   /* We added 36px because with the bor-sizing= border-box to all elements 
@@ -852,6 +1039,32 @@ So it is a design pattern ... that we will integrate in this class */
 
 .wrapper--medium {
     max-width: 976px;    
+  }
+
+.wrapper --no-padding-until-medium {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+@media (min-width: 800px) {
+
+.wrapper --no-padding-until-medium {
+      padding-left: 18px;
+      padding-right: 18px
+  }
+  }
+
+.wrapper --no-padding-until-large {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+@media (min-width: 1010px) {
+
+.wrapper --no-padding-until-large {
+      padding-left: 18px;
+      padding-right: 18px
+  }
   }
 
 .wrapper--b-margin {

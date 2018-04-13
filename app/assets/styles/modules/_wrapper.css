@@ -1,7 +1,5 @@
 .wrapper {
   overflow: hidden;
-  padding-left: 18px;
-  padding-right: 18px;
 
   /* So that the text lines are not too long too read on a large screen */
   /* We added 36px because with the bor-sizing= border-box to all elements 
@@ -15,6 +13,26 @@
     max-width: 976px;    
   }
 
+  --no-padding-until-medium {
+    padding-left: 0;
+    padding-right: 0;
+
+    @mixin atMedium {
+      padding-left: 18px;
+      padding-right: 18px;    
+    }
+  }
+
+  --no-padding-until-large {
+    padding-left: 0;
+    padding-right: 0;
+
+    @mixin atLarge {
+      padding-left: 18px;
+      padding-right: 18px;    
+    }
+  }
+ 
   &--b-margin {
     margin-bottom: 1rem;
 

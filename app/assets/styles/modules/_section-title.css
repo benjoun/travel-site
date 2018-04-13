@@ -11,6 +11,10 @@
     font-weight: 500;
   }
 
+  &--blue {
+    color: $mainBlue;
+  }
+
   &__icon {
     /* To draw the text after it on mobile & centered*/
     display: block;
@@ -19,6 +23,11 @@
     margin-bottom: .6rem;
 
     @mixin atSmall {
+
+      /* to put the icon a bit lower */
+      position: relative;
+      top: 8px;
+      
       margin-right: .5rem;
       margin-left: 0;
       margin-bottom: 0;
