@@ -497,9 +497,58 @@ a {
  }
   }
 
+.feature-item {
+  position: relative;
+
+
+  padding-bottom: 2.5rem;
+}
+
+@media (min-width: 530px) {
+
+.feature-item {
+    /* push the content in */
+    padding-left: 94px
+}
+  }
+
+/* now we can put the icon to the top; */
+
+.feature-item__icon {
+  
+    display: block;
+    margin: 0 auto;
+  }
+
+@media (min-width: 530px) {
+
+.feature-item__icon {
+      position: absolute;
+      left: 0
+  }
+  }
+
+.feature-item__title {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-top: .7rem;
+    margin-bottom: .8rem;
+    text-align: center;
+  }
+
+@media (min-width: 530px) {
+
+.feature-item__title {
+      text-align: left;
+      margin-top: 1rem;
+      font-size: 1.875rem
+  }
+  }
+
 .generic-content-container p {
     line-height: 1.65;
     margin: 1.8rem 0;
+    font-weight: 300;
   }
 
 @media (min-width: 530px) {
@@ -696,14 +745,22 @@ So it is a design pattern ... that we will integrate in this class */
     margin-right: -65px;
   }
 
+/* For Clearfix
+    We create a pseudo or fake content with css */
+
+.row--gutters-large {
+    margin-right: -100px;      
+  }
+
 /* >: to select the childs, because this is not to style the parent*/
 
 .row--gutters > div{
     padding-right: 65px;
   }
 
-/* For Clearfix
-    We create a pseudo or fake content with css */
+.row--gutters-large > div{
+    padding-right: 100px;
+  }
 
 .row__b-margin-until-medium {
     margin-bottom: 1rem;
@@ -725,6 +782,13 @@ So it is a design pattern ... that we will integrate in this class */
         width: 37%;
       }
 
+    .row__medium-6 {
+      float: left;
+
+      /* each column: 100% divided by 12, so take 8.33 % ... so for a 4column: 4*8.33 = 33.33 */
+      width: 50%;
+    }
+
     .row__medium-8 {
       float: left;
       width: 66.66%;   
@@ -733,6 +797,43 @@ So it is a design pattern ... that we will integrate in this class */
       .row__medium-8--smaller {
         width: 63%;
       }
+  }
+
+.section-title {
+  font-size: 2.55rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+@media (min-width: 530px) {
+
+.section-title {
+    font-size: 3.75rem
+}
+  }
+
+.section-title strong {
+    font-weight: 500;
+  }
+
+.section-title__icon {
+    /* To draw the text after it on mobile & centered*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: .6rem;
+  }
+
+@media (min-width: 530px) {
+
+.section-title__icon {
+      margin-right: .5rem;
+      margin-left: 0;
+      margin-bottom: 0;
+
+      /* So that in larger screen it won't drop the text on another lne */
+      display: inline-block
+  }
   }
 
 .wrapper {
