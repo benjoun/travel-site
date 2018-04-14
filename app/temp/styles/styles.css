@@ -545,6 +545,32 @@ a {
   }
   }
 
+.site-footer {
+  background-color: #2f5572;
+  color: #FFF;
+
+  /* To overlap the margin of the child p element */
+  padding: 0.5rem 0;
+
+  text-align: center;
+}
+
+.site-footer__text {
+    /* to give a line break after the text (on mobile) */
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 200;
+  }
+
+@media (min-width: 800px) {
+
+.site-footer__text {
+      display: inline;
+      margin-bottom: 0; /* no need anymore */
+      margin-right: 2rem
+  }
+  }
+
 .generic-content-container p {
     line-height: 1.65;
     margin: 1.8rem 0;

@@ -1,0 +1,22 @@
+.site-footer {
+  background-color: $mainBlue;
+  color: #FFF;
+
+  /* To overlap the margin of the child p element */
+  padding: 0.5rem 0;
+
+  text-align: center;
+
+  &__text {
+    /* to give a line break after the text (on mobile) */
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 200;
+
+    @mixin atMedium {
+      display: inline;
+      margin-bottom: 0; /* no need anymore */
+      margin-right: 2rem;
+    }
+  }
+}
