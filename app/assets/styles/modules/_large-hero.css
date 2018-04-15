@@ -2,14 +2,26 @@
   border-bottom: 10px solid $mainBlue; 
   position: relative;
 
+  /* We need this so that there is no space between the image & its border */
+  /* because as an inline element... it considers it similar as text, with extra room below for letter pqjgy that goes below */
+  /* as a block it is consider as a div that can fit perfectly */
+  &__image {
+    display: block;
+  }
+  
   &__content-text {
     /* The default settings here are for all & especially the smallest screen sizes (mobile first) */
+    padding-top: 88px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%); 
     left: 0;
     width: 100%;
     text-align: center;
+
+    @mixin atMedium {
+      padding-top: 60px;      
+    }
   }
     
   &__title {
@@ -62,12 +74,5 @@
     @mixin atSmall {
       font-size: 1.875rem;      
     }
-  }
-
-  /* We need this so that there is no space between the image & its border */
-  /* because as an inline element... it considers it similar as text, with extra room below for letter pqjgy that goes below */
-  /* as a block it is consider as a div that can fit perfectly */
-  &__image {
-    display: block;
   }
 }

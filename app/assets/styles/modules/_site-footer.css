@@ -1,7 +1,5 @@
 .site-footer {
   background-color: $mainBlue;
-  color: #FFF;
-
   /* To overlap the margin of the child p element */
   padding: 0.5rem 0;
 

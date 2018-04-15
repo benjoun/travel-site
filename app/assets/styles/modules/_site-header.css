@@ -1,0 +1,148 @@
+.site-header {
+  position: absolute;
+  /* in absolute position by default it will take the minime size 
+  that take its child elements... so we need: */
+  width: 100%;
+  padding: 10px 0;
+  z-index: 2;
+  transition: all .3s ease-out;
+  &--is-expanded {
+    background-color: rgba($mainBlue, .55);
+  }
+  @mixin atMedium {
+    /* with the rgb value of our main blue */
+    /* background-color: rgba(47, 85, 114, .3); */
+    /* thanks to the post-css module hexrgba we can put 
+  the variable instead of the rgb values of the color */
+    background-color: rgba($mainBlue, .3);
+  }
+  &__btn-container {
+    @mixin atMedium {
+      float: right;
+    }
+  }
+  /* To put it out of the natural flow of the page */
+  &__logo {
+    position: absolute;
+    top: 0;
+    /* otherwise is lowered by the padding of it's parent element */
+    background-color: $mainBlue;
+    padding: 25px 36px;
+    left: 50%;
+    transform: translateX(-50%) scale(.8);
+    /* define the center of transformation, by default at the middle of the element, that is 50% 50% */
+    transform-origin: 50% 0%;
+    @mixin atMedium {
+      /* To undo the centered positionning for smaller screens */
+      left: auto;
+      transform: translateX(0);
+    }
+  }
+  /* when sprite integrated see begining of section header part 2*/
+  &__logo__grahic {
+    text-indent: -9999px;
+  }
+
+  &__menu-icon {
+    width: 20px;
+    height: 19px;
+    /* background-color: #FFF; */
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    /* to be sure that it stays on the top
+    otherwise when the menu is visible it can be on the top of if, and click on it won't work */
+    z-index: 10;
+    
+    transition: all .3s ease-out;
+    
+    /* upper line */
+    &::before {
+      content:"";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: #FFF;
+      /* for the rotation */
+      transform-origin: 0 0;
+
+      transition: all .3s ease-out;      
+    }
+
+    &__middle {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      
+      background-color: #FFF;
+
+      transform-origin: 0 50%;
+      transition: all .3s ease-out;
+    }
+
+    /* bottom line */
+    &::after {
+      content:"";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      
+      background-color: #FFF;
+      /* for the rotation */
+      transform-origin: 0 100%;
+
+      transition: all .3s ease-out;
+    }
+
+    @mixin atMedium {
+      display: none;
+    }
+
+    &--close-x {
+      &::before {
+        transform: rotate(45deg) scaleX(1.25);
+      }
+
+      .site-header__menu-icon__middle {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      &::after {
+        transform: rotate(-45deg) scaleX(1.25) translateY(1px);        
+      }
+    }
+  }
+  &__menu-content {
+    /* opacity 0 instead of display: none; so that we can make transiton */
+    opacity: 0;
+    transform: scale(1.2);
+    transition: all .3s ease-out;
+    /* with just opacity 0 the user can click on it... so we change the z-index */
+    /* and with z-index we need position relative to be working */
+    position: relative;
+    z-index: -10;
+    padding-top: 90px;
+    text-align: center;
+    @mixin atMedium {
+      opacity: 1;
+      z-index: 1;
+      transform: scale(1);
+      padding-top: 0px;
+    }
+
+    &--is-visible {
+      opacity: 1;
+      z-index: 0;
+      transform: scale(1);
+    }
+  }
+}
