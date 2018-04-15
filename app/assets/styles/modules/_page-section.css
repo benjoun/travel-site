@@ -22,7 +22,7 @@ So it is a design pattern ... that we will integrate in this class */
 
     @mixin atMedium {
       /* setting back to its original value */
-      @padding-bottom: 4.5rem;
+      padding-bottom: 4.5rem;
     }      
   }
 

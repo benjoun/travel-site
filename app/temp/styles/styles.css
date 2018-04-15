@@ -971,9 +971,9 @@ So it is a design pattern ... that we will integrate in this class */
 @media (min-width: 800px) {
 
 .page-section--no-b-padding-until-large {
-      /* setting back to its original value */      
+      /* setting back to its original value */
+      padding-bottom: 4.5rem      
   }
-      @padding-bottom: 4.5rem;
   }
 
 .page-section--blue {
@@ -1087,6 +1087,22 @@ So it is a design pattern ... that we will integrate in this class */
       /* for larger screen don't use background colores for the links */
       background-color: transparent
   }
+  }
+
+.reveal-item {
+  opacity: 0;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+
+  -webkit-transition: all 1.5s ease-out;
+
+  transition: all 1.5s ease-out;
+}
+
+.reveal-item--is-visible {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 
 /* It is like create a content right after the current div 
