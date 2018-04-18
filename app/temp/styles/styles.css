@@ -955,6 +955,26 @@ a {
   }
   }
 
+.modal {
+ position: fixed;
+ /* to be at the front */
+ z-index: 5;
+ background-color: rgba(255,255,255, .94);
+
+ /* to occupy all the screen */
+ top: 0 ;
+ bottom: 0;
+  left: 0 ;
+ right: 0; 
+}
+
+.modal__description {
+   text-align: center;
+   font-size: 1.3rem;
+   font-weight: 300;
+   line-height: 1.65;
+ }
+
 /* We see space at the beginning & the end of each section of the templage
 So it is a design pattern ... that we will integrate in this class */
 
@@ -1300,6 +1320,10 @@ So it is a design pattern ... that we will integrate in this class */
     color: #2f5572;
   }
 
+.section-title--less-margin {
+    margin-bottom: 1.3rem;
+  }
+
 .section-title__icon {
     /* To draw the text after it on mobile & centered*/
     display: block;
@@ -1324,6 +1348,42 @@ So it is a design pattern ... that we will integrate in this class */
       display: inline-block
   }
   }
+
+.social_icons {
+  text-align: center;
+}
+
+.social_icons__icon {
+    background-color: #d59541;
+
+    /* in this way all the social media icons ill sit on a single line
+    but inline block will let us give them a custom height if we need to */
+    display: inline-block;
+
+    margin: 0 .5px 5px 5px;
+    width: 33%;
+    height: 72px;
+
+    position: relative;
+  }
+
+@media (min-width: 530px) {
+
+.social_icons__icon {
+      width: 72px;
+      margin: 0 .5px
+  }
+  }
+
+.social_icons__icon .icon {
+    /* this way width & height value from our automated sprite setup can actually be applied to the elemen*/
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50;
+    -webkit-transform: translate( -50%, 50%);
+            transform: translate( -50%, 50%);
+    }
 
 .testimonial {
   background-color: rgba(255, 255, 255, .8);
@@ -1397,6 +1457,10 @@ So it is a design pattern ... that we will integrate in this class */
 
 .wrapper--medium {
     max-width: 976px;    
+  }
+
+.wrapper--narrow {
+    max-width: 470px;
   }
 
 .wrapper --no-padding-until-medium {

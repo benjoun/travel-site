@@ -10,10 +10,12 @@
 @import "modules/_site-header";
 @import "modules/_headline";
 @import "modules/_large-hero";
+@import "modules/_modal";
 @import "modules/_page-section";
 @import "modules/_primary-nav";
 @import "modules/_reveal-item";
 @import "modules/_row";
 @import "modules/_section-title";
+@import "modules/_social-icons";
 @import "modules/_testimonial";
 @import "modules/_wrapper";

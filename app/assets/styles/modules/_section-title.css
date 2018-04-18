@@ -15,6 +15,10 @@
     color: $mainBlue;
   }
 
+  &--less-margin {
+    margin-bottom: 1.3rem;
+  }
+
   &__icon {
     /* To draw the text after it on mobile & centered*/
     display: block;
