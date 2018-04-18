@@ -6,15 +6,25 @@
   padding: 10px 0;
   z-index: 2;
   transition: all .3s ease-out;
+
   &--is-expanded {
     background-color: rgba($mainBlue, .55);
   }
+
   @mixin atMedium {
+
+    position: fixed;
+
     /* with the rgb value of our main blue */
     /* background-color: rgba(47, 85, 114, .3); */
     /* thanks to the post-css module hexrgba we can put 
   the variable instead of the rgb values of the color */
     background-color: rgba($mainBlue, .3);
+
+    &--dark {
+      /* to use a darker blue and less tranparent, as we scroll down (see javasript) */
+      background-color: rgba(23, 51, 72, .85);
+    }
   }
   &__btn-container {
     @mixin atMedium {
@@ -32,10 +42,17 @@
     transform: translateX(-50%) scale(.8);
     /* define the center of transformation, by default at the middle of the element, that is 50% 50% */
     transform-origin: 50% 0%;
+    transition: transform .3s ease-out;
+
     @mixin atMedium {
       /* To undo the centered positionning for smaller screens */
       left: auto;
       transform: translateX(0);
+
+      /* So this selector will target the logo element only when the dark header is being used */
+      .site-header--dark & {
+        transform: scale(.57);
+      }
     }
   }
   /* when sprite integrated see begining of section header part 2*/

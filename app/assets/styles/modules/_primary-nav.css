@@ -62,6 +62,10 @@
       
       /* for larger screen don't use background colores for the links */
       background-color: transparent;
+
+      &.is-current-link {
+        color: #fabb69;
+      }
     }
   }
 }
