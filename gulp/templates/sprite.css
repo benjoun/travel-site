@@ -1,0 +1,22 @@
+/* DO NOT EDIT modules/_sprite directly as it is generated automatically by gulp
+INSTEAD edit gulp/templates/sprite */
+
+
+/* All this name (shapes, base, outer, sprites, position.relatives.xy
+are depending with the package we use svg-sprite you can find info on the relative page on github*/
+
+{{#shapes}}
+  /* so we don't repeat this same declaration inside each individual icon */
+  {{#first}}
+  .icon {
+    background-image: url('/assets/images/sprites/{{{sprite}}}');
+  }      
+  {{/first}}
+  .icon--{{base}} {
+    width: {{width.outer}}px;
+    height: {{height.outer}}px;
+    /* this 'sprite' var is responsible for going into the svg folder and getting the path for the sprite file (with a unique name) */
+    /* the 3 {{{ }}} is to avoid that / slash inside is escaped */
+    background-position: {{position.relative.xy}};
+  }
+{{/shapes}}
