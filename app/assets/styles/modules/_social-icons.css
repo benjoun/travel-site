@@ -1,4 +1,4 @@
-.social_icons {
+.social-icons {
   text-align: center;
 
   &__icon {
@@ -8,13 +8,13 @@
     but inline block will let us give them a custom height if we need to */
     display: inline-block;
 
-    margin: 0 .5px 5px 5px;
+    margin: 0 5px 5px 5px;
     width: 33%;
     height: 72px;
 
     @mixin atSmall {
       width: 72px;
-      margin: 0 .5px;
+      margin: 0 5px;
     }
 
     position: relative;
@@ -24,8 +24,8 @@
     display: block;
     position: absolute;
     top: 50%;
-    left: 50;
-    transform: translate( -50%, 50%);
+    left: 50%;
+    transform: translate( -50%, -50%);
     }
   }
 }
